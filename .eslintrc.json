@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended"],
+  "globals": {
+    "test": "readonly",
+    "expect": "readonly",
+    "fail": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [],
+  "rules": {
+    "no-console": ["error", {
+      "allow": ["warn", "error"]
+    }],
+    "no-unused-vars": ["error", {
+      "args": "none"
+    }],
+    "max-len": ["error", {
+      "code": 100
+    }]
+  }
+}

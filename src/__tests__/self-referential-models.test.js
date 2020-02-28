@@ -8,7 +8,7 @@ const siteAData = data(siteAPointer, {name: 'Site A'}, {
   parent: {data: siteAPointer},
   owner: {data: userAPointer},
 })
-const userAData = data(userAPointer, {name: 'User A'}, {})
+// const userAData = data(userAPointer, {name: 'User A'}, {})
 
 test('self referential models also have recursion protection', () => {
   const data = [
