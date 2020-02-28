@@ -30,6 +30,8 @@
   "homepage": "https://github.com/bor3ham/join-includes#readme",
   "devDependencies": {
     "@babel/core": "^7.8.6",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
@@ -39,8 +41,5 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   },
-  "dependencies": {
-    "@babel/plugin-proposal-export-default-from": "^7.8.3",
-    "@babel/preset-env": "^7.8.6"
-  }
+  "dependencies": {}
 }
