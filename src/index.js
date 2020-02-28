@@ -1,3 +1,7 @@
+function uniqueKey(item) {
+  return `${item.type}-${item.id}`
+}
+
 function retree(item, known, seen) {
   // if it's an array, map over it automatically
   if (Array.isArray(item)) {
@@ -25,7 +29,7 @@ function retree(item, known, seen) {
       }
       tree[key] = {
         ...tree[key],
-        data: retree(tree[key].data, known, {...seen, [item.type]: true}),
+        data: retree(tree[key].data, known, {...seen, [uniqueKey(item)]: true}),
       }
     }
     return {
@@ -36,7 +40,7 @@ function retree(item, known, seen) {
   // just a pointer - return from known dictionary
   else {
     // just leave it as a pointer if we have already seen this type
-    if (item.type in seen) {
+    if (uniqueKey(item) in seen) {
       return item
     }
     if (item.type in known && item.id in known[item.type]) {
