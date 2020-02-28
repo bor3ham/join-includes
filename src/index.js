@@ -58,7 +58,7 @@ export default function(data, included) {
       return
     }
     if (item.type in known === false) {
-      known[item.type] = []
+      known[item.type] = {}
     }
     known[item.type][item.id] = item
   }
