@@ -25,7 +25,7 @@ function retree(item, known, seen) {
       }
       tree[key] = {
         ...tree[key],
-        data: retree(tree[key].data, known, seen),
+        data: retree(tree[key].data, known, {...seen, [item.type]: true}),
       }
     }
     return {
@@ -35,6 +35,10 @@ function retree(item, known, seen) {
   }
   // just a pointer - return from known dictionary
   else {
+    // just leave it as a pointer if we have already seen this type
+    if (item.type in seen) {
+      return item
+    }
     if (item.type in known && item.id in known[item.type]) {
       return retree(known[item.type][item.id], known, seen)
     }
