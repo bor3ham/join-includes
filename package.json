@@ -1,0 +1,40 @@
+{
+  "name": "join-includes",
+  "version": "0.0.1",
+  "description": "Function for re-treeing JSON API formatted payloads.",
+  "main": "dist/join-includes.js",
+  "scripts": {
+    "test": "jest",
+    "build": "./node_modules/.bin/webpack --config webpack.build.js",
+    "watch": "./node_modules/.bin/webpack --config webpack.dev.js --watch",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bor3ham/join-includes.git"
+  },
+  "keywords": [
+    "join",
+    "includes",
+    "json",
+    "api",
+    "retree"
+  ],
+  "author": "Michael Boreham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bor3ham/join-includes/issues"
+  },
+  "homepage": "https://github.com/bor3ham/join-includes#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "babel-loader": "^8.0.6",
+    "jest": "^25.1.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/preset-env": "^7.8.6"
+  }
+}
