@@ -54,7 +54,7 @@ export default function(data, included) {
   // create a dictionary of known items by [type][id]
   const known = {}
   function learn(item) {
-    if ('type' in item === false || 'id' in item === false) {
+    if (typeof item !== 'object' || 'type' in item === false || 'id' in item === false) {
       return
     }
     if (item.type in known === false) {
@@ -62,7 +62,12 @@ export default function(data, included) {
     }
     known[item.type][item.id] = item
   }
-  data.map(learn)
+  if (Array.isArray(data)) {
+    data.map(learn)
+  }
+  else {
+    learn(data)
+  }
   included.map(learn)
   // recursively retree using known database
   return retree(data, known, {})
