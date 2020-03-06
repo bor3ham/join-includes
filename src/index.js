@@ -12,6 +12,7 @@ function retree(item, known, seen) {
   // if it isn't even a JSON API object, return it unchanged
   if (
     typeof item !== 'object'
+    || item === null
     || 'id' in item === false
     || 'type' in item === false
   ) {
@@ -54,7 +55,12 @@ export default function(data, included) {
   // create a dictionary of known items by [type][id]
   const known = {}
   function learn(item) {
-    if (typeof item !== 'object' || 'type' in item === false || 'id' in item === false) {
+    if (
+      typeof item !== 'object'
+      || item === null
+      || 'type' in item === false
+      || 'id' in item === false
+    ) {
       return
     }
     if (item.type in known === false) {
