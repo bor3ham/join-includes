@@ -1,6 +1,6 @@
 {
   "name": "join-includes",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Function for re-treeing JSON API formatted payloads.",
   "main": "dist/join-includes.js",
   "scripts": {
